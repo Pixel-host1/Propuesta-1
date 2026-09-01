@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros — Show Tech Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #4a4a4a;
+            --surface: #15171e;
+            --surface-hover: #e0ba69b3;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #cb6ce6;
+            --accent-glow: #d4af3726;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 16px;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        /* Floating Modern Nav */
+        nav.fresh-nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(21, 23, 30, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .nav-logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Fresh Hero Section */
+        .hero-fresh {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 160px 20px 80px 20px;
+            background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+        }
+        .hero-badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero-fresh h1 {
+            font-size: clamp(40px, 6vw, 76px);
+            font-weight: 800;
+            max-width: 900px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        .hero-fresh p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* Buttons */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            background: var(--accent);
+            color: #0b0c10;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Layout Container & Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        /* Fresh Cards */
+        .card-fresh {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card-fresh:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.3);
+            background: var(--surface-hover);
+        }
+        .card-fresh h3 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+        .card-fresh p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin: 0;
+        }
+
+        /* Footer Fresh */
+        .footer-fresh {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 80px 24px 40px 24px;
+            text-align: center;
+        }
+
+        @media(max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-fresh h1 { font-size: 38px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="fresh-nav">
+        <a href="inicio.html" class="nav-logo">SHOWTECH SOLUTIONS<span>.</span></a>
+        <div class="nav-links">
+            <a href="inicio.html" class="">Inicio</a>
+            <a href="servicios.html" class="">Servicios</a>
+            <a href="nosotros.html" class="active">Nosotros</a>
+            <a href="contacto.html" class="">Contacto</a>
+        </div>
+    </nav>
+
+    
+    <section class="hero-fresh" style="min-height: 60vh;">
+        <div class="hero-badge">Nuestra Esencia</div>
+        <h1>Creadores de momentos extraordinarios.</h1>
+        <p>Un equipo apasionado por la excelencia y la innovación en Lima.</p>
+    </section>
+
+    <div class="container" style="padding-top: 0;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 80px;">
+            <div class="card-fresh">
+                <span style="color: var(--accent); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Propósito</span>
+                <h3 style="font-size: 28px; margin-top: 10px;">Nuestra Misión</h3>
+                <p>Crear experiencias inolvidables a través de la producción integral de eventos, ofreciendo soluciones creativas, personalizadas y de altísima calidad que superen las expectativas.</p>
+            </div>
+            <div class="card-fresh">
+                <span style="color: var(--accent); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Proyección</span>
+                <h3 style="font-size: 28px; margin-top: 10px;">Nuestra Visión</h3>
+                <p>Ser reconocidos como la empresa líder en la industria de organización de eventos a nivel nacional, destacando por nuestra innovación, rigor profesional y elegancia.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer-fresh">
+        <p style="font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 10px;">SHOWTECH SOLUTIONS</p>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 30px;">Arquitectura de experiencias y eventos exclusivos en Lima.</p>
+        <p style="color: #4b5563; font-size: 13px;">&copy; Diseñado por <a href="https://pixelhost.com.pe/" style="color: #ffffff; text-decoration: none; font-weight: bold;">PIXELHOST</a> | © 2015 - 2026 Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
